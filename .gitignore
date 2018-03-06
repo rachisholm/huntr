@@ -1,0 +1,19 @@
+# IntelliJ files
+*.idea
+*.iml
+
+# Maven files
+*target
+    
+# Eclipse files
+*.project
+*.classpath
+*.settings
+*bin
+    
+# Other project specific stuff
+*.iws
+*.ipr
+*.log
+.DS_Store
+dependency-reduced-pom.xml
