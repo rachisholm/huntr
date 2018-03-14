@@ -24,10 +24,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @RequestMapping("/hunter")
-@Api(value="hunter", description="happy hunting")
-public class HunterResource {
+public interface HunterResource {
 
     @RequestMapping(value = "/", method= RequestMethod.GET)
     @ApiOperation(value = "Add a new product to the hunter", response = String.class
@@ -38,11 +36,7 @@ public class HunterResource {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    public String index() {
-
-
-        return "Greetings from Spring Boot!";
-    }
+    String get();
 
 
 
