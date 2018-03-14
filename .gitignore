@@ -17,3 +17,6 @@
 *.log
 .DS_Store
 dependency-reduced-pom.xml
+
+# files not to be uploaded to github
+auth.properties

@@ -20,7 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mainClass>io.whiskyhuntr.core.WhiskyHuntr</mainClass>
-        <swagger.version>1.5.17</swagger.version>
+        <swagger.version>2.7.0</swagger.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -41,6 +41,7 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- Spring / General Framework -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -59,22 +60,30 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+
+        <!-- Swagger -->
+
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.6.1</version>
+            <version>${swagger.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.6.1</version>
+            <version>${swagger.version}</version>
             <scope>compile</scope>
         </dependency>
 
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+
+
+        <!-- Jackson -->
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -93,6 +102,15 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.9.4</version>
         </dependency>
+
+
+        <!-- CONFIGURATION -->
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
