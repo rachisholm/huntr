@@ -1,14 +1,13 @@
-package io.whiskyhuntr.core.services;
+package core.services;
 
+import core.config.AppConfigurationManager;
 import io.swagger.annotations.Api;
-import io.whiskyhuntr.core.config.AppConfigurationManager;
-import io.whiskyhuntr.core.resources.ConfigurationResource;
-import org.springframework.web.bind.annotation.RequestMapping;
+import io.whiskyhuntr.contracts.ConfigurationContract;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Api(value="configuration", description="configure the hunter")
-public class ConfigurationService implements ConfigurationResource {
+public class ConfigurationService implements ConfigurationContract {
 
     public String getConfigValue(String key){
         return AppConfigurationManager.getStringConfig(key, "");

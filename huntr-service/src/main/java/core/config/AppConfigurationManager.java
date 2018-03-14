@@ -1,20 +1,12 @@
-package io.whiskyhuntr.core.config;
+package core.config;
 
-import com.netflix.config.AbstractPollingScheduler;
 import com.netflix.config.ConcurrentCompositeConfiguration;
 import com.netflix.config.ConfigurationManager;
 import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.config.DynamicStringProperty;
-import com.netflix.config.FixedDelayPollingScheduler;
-import com.netflix.config.PolledConfigurationSource;
-import com.netflix.config.sources.URLConfigurationSource;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.configuration.AbstractConfiguration;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
-
-import javax.annotation.PostConstruct;
-import java.io.IOException;
 
 @Configuration
 @Slf4j

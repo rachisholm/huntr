@@ -1,17 +1,14 @@
-package io.whiskyhuntr.core.resources;
+package io.whiskyhuntr.contracts;
 
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 @RequestMapping("/configuration")
-public interface ConfigurationResource {
+public interface ConfigurationContract {
 
     @RequestMapping(value = "/config/key", method= RequestMethod.GET)
     @ApiOperation(value = "Retrieve config value", response = String.class

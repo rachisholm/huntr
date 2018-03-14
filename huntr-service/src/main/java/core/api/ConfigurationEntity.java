@@ -1,4 +1,4 @@
-package io.whiskyhuntr.core.api;
+package core.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

@@ -8,18 +8,22 @@
     <prerequisites>
         <maven>3.0.0</maven>
     </prerequisites>
+    <modules>
+        <module>huntr-contracts</module>
+        <module>huntr-service</module>
+    </modules>
 
     <groupId>io.whiskyhuntr</groupId>
     <artifactId>huntr-core</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>WhiskyHuntr</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mainClass>io.whiskyhuntr.core.WhiskyHuntr</mainClass>
+        <mainClass>core.WhiskyHuntr</mainClass>
         <swagger.version>2.7.0</swagger.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
