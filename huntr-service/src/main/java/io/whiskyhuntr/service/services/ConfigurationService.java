@@ -1,8 +1,8 @@
-package core.services;
+package io.whiskyhuntr.service.services;
 
-import core.config.AppConfigurationManager;
 import io.swagger.annotations.Api;
 import io.whiskyhuntr.contracts.ConfigurationContract;
+import io.whiskyhuntr.service.config.AppConfigurationManager;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

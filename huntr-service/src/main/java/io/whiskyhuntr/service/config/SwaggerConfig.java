@@ -1,4 +1,4 @@
-package core.config;
+package io.whiskyhuntr.service.config;
 
 import io.swagger.annotations.Api;
 import org.springframework.context.annotation.Bean;

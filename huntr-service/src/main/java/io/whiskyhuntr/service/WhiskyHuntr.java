@@ -1,27 +1,16 @@
-package core;
+package io.whiskyhuntr.service;
 
-import com.netflix.config.ConfigurationManager;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import java.io.IOException;
 @SpringBootApplication
 public class WhiskyHuntr {
 
     public static void main(String[] args) {
-
-        //Load auth properties manually
-        try {
-            ConfigurationManager.loadCascadedPropertiesFromResources("auth");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        SpringApplication.run(WhiskyHuntr.class, args);
+                SpringApplication.run(WhiskyHuntr.class, args);
 
     }
 

@@ -4,7 +4,7 @@ build:
 	mvn clean package
 
 run:
-	java -jar target/huntr-core-1.0-SNAPSHOT.jar server config.yml
+	java -jar target/huntr-core-1.0-SNAPSHOT.jar
 
 #docker:
 #	mvn clean grails:war

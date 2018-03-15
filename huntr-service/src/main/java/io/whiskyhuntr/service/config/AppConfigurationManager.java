@@ -1,4 +1,4 @@
-package core.config;
+package io.whiskyhuntr.service.config;
 
 import com.netflix.config.ConcurrentCompositeConfiguration;
 import com.netflix.config.ConfigurationManager;
@@ -8,10 +8,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PostConstruct;
+import java.io.IOException;
+
 @Configuration
 @Slf4j
 @Qualifier("appConfig")
 public class AppConfigurationManager {
+    @PostConstruct
+    public void init(){
+        //Load auth properties manually
+        try {
+            ConfigurationManager.loadCascadedPropertiesFromResources("auth");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public static String getUser(){
@@ -20,6 +32,10 @@ public class AppConfigurationManager {
 
     public static String getPassword(){
         return getStringConfig("auth.user.password", "platform");
+    }
+
+    public static String getStringConfig(String key){
+        return getStringConfig(key, null);
     }
 
     public static String getStringConfig(String key, String defaultValue){

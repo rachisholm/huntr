@@ -1,4 +1,4 @@
-package core.config;
+package io.whiskyhuntr.service.config;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;

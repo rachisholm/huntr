@@ -2,26 +2,48 @@ package io.whiskyhuntr.contracts;
 
 
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.whiskyhuntr.contracts.domain.ProductDTO;
+import io.whiskyhuntr.contracts.domain.StoreDTO;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 @RequestMapping("/hunter")
 public interface HunterContract {
 
-    @RequestMapping(value = "/", method= RequestMethod.GET)
-    @ApiOperation(value = "Add a new product to the hunter", response = String.class
-    )
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
-    })
-    String get();
+    @RequestMapping(value = "/stores/{storeId}", method= RequestMethod.GET)
+    @ApiOperation(value = "Get Store Data", response = StoreDTO.class, tags = "store")
+    StoreDTO getStore(
+            @PathVariable int storeId
+    );
 
+    @RequestMapping(value = "/stores", method= RequestMethod.GET)
+    @ApiOperation(value = "Get All Store Data", response = List.class, tags = "store")
+    List<StoreDTO> getStoreList();
 
+    @RequestMapping(value = "/stores", method= RequestMethod.POST)
+    @ApiOperation(value = "Create Store Data", response = StoreDTO.class, tags = "store")
+    StoreDTO createStore(
+            StoreDTO store
+    );
+
+    @RequestMapping(value = "/products/{productId}", method= RequestMethod.GET)
+    @ApiOperation(value = "Get Product Data", response = ProductDTO.class, tags = "product")
+    ProductDTO getProduct(
+            @PathVariable int productId
+    );
+
+    @RequestMapping(value = "/products", method= RequestMethod.GET)
+    @ApiOperation(value = "Get All Product Data", response = List.class, tags = "product")
+    List<ProductDTO> getProductList();
+
+    @RequestMapping(value = "/products", method= RequestMethod.POST)
+    @ApiOperation(value = "Create Product Data", response = ProductDTO.class, tags = "product")
+    ProductDTO createProduct(
+            ProductDTO product
+    );
 
 
 }
