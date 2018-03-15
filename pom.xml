@@ -32,6 +32,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- SPRING -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
@@ -49,44 +50,18 @@
                 <version>4.3.7.RELEASE</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>1.4.193</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-core</artifactId>
-                <version>5.2.11.Final</version>
-            </dependency>
-
+            <!--PERSISTENCE-->
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-orm</artifactId>
+                <artifactId>spring-jdbc</artifactId>
                 <version>4.3.3.RELEASE</version>
-            </dependency>
-
-            <!-- Persistence -->
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-core</artifactId>
-                <version>5.2.15.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate.javax.persistence</groupId>
-                <artifactId>hibernate-jpa-2.1-api</artifactId>
-                <version>1.0.2.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mchange</groupId>
-                <artifactId>c3p0</artifactId>
-                <version>0.9.5.2</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>6.0.6</version>
             </dependency>
+
             <!-- UTILS -->
 
             <dependency>
@@ -145,8 +120,6 @@
             <version>${swagger.version}</version>
             <scope>compile</scope>
         </dependency>
-
-
 
         <!-- Jackson -->
 
