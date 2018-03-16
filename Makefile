@@ -3,6 +3,10 @@ init: build
 build:
 	mvn clean package
 
+build-docker
+    mvn install dockerfile:build
+
+
 run:
 	java -jar target/huntr-core-1.0-SNAPSHOT.jar
 
